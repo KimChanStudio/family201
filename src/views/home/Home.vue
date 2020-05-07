@@ -3,13 +3,7 @@
     <nav-bar class="home-nav">
       <div slot="center">Family201</div>
     </nav-bar>
-    <el-row type="flex" class="row-bg home-menu" justify="center">
-      <el-col :span="6">
-        <div class="grid-content bg-purple-light">
-          <el-button plain>点餐系统</el-button>
-        </div>
-      </el-col>
-    </el-row>
+    <main-menu></main-menu>
   </div>
 </template>
 
@@ -18,10 +12,13 @@
 import NavBar from "@/components/common/navbar/NavBar";
 import Scroll from "@/components/common/scroll/Scroll";
 
+import MainMenu from "@/components/content/mainMenu/MainMenu";
+
 export default {
   name: "Home",
   components: {
-    NavBar
+    NavBar,
+    MainMenu
   }
 };
 </script>
@@ -41,8 +38,5 @@ export default {
   right: 0;
   top: 0;
   z-index: 9; */
-}
-.home-menu {
-  margin-top: 2rem;
 }
 </style>

@@ -28,6 +28,8 @@ export default {
 
 <style scoped>
 .nav-bar {
+  background-color: var(--color-tint);
+  color: #fff;
   display: flex;
   height: 44px;
   line-height: 44px;
