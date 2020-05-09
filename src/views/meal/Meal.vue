@@ -21,7 +21,7 @@
           </el-select>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="onSubmit">立即创建</el-button>
+          <el-button type="primary" @click="generateMeal">麻辣鸡丝砰！</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -42,11 +42,43 @@ export default {
     };
   },
   components: {
-      NavBar
+    NavBar
   },
   methods: {
-    onSubmit() {
+    generateMeal: function() {
       console.log("submit!");
+      if (this.validateGenerateMeal()) {
+        this.$store.dispatch("generateMeal", {
+          person: this.form.person,
+          type: this.form.type
+        });
+      } else {
+        console.log("parameters invalid");
+      }
+    },
+    validateGenerateMeal: function() {
+      let validGenerateMealForm = true;
+      let personRange = ["1", "2", "3", "4"];
+      let typeRange = ["workday", "weekend", "holiday"];
+
+      if (personRange.indexOf(this.form.person.toString()) != -1) {
+        validGenerateMealForm = true;
+      } else {
+        validGenerateMealForm = false;
+      }
+      //   console.log(personRange.indexOf(this.form.person.toString()));
+      //   console.log(validGenerateMealForm);
+      if (typeRange.indexOf(this.form.type.toString()) != -1) {
+        validGenerateMealForm = true;
+        // console.log("valid type");
+      } else {
+        validGenerateMealForm = false;
+      }
+      //   console.log(this.form.type.toString());
+      //   console.log(typeRange.indexOf(this.form.type.toString()));
+      //   console.log(validGenerateMealForm);
+
+      return validGenerateMealForm;
     }
   }
 };
