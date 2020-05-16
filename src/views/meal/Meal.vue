@@ -44,10 +44,10 @@
       >
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="name" sortable label="菜名" width="120"></el-table-column>
-        <el-table-column prop="category" sortable label="种类" width="55"></el-table-column>
-        <el-table-column prop="flavor" sortable label="口味" width="55"></el-table-column>
-        <el-table-column prop="difficulty" sortable label="难度" width="55"></el-table-column>
-        <el-table-column prop="cost" sortable label="花费" width="55"></el-table-column>
+        <el-table-column prop="category" sortable label="种类" width="90"></el-table-column>
+        <el-table-column prop="flavor" sortable label="口味" width="90"></el-table-column>
+        <el-table-column prop="difficulty" sortable label="难度" width="90"></el-table-column>
+        <el-table-column prop="cost" sortable label="花费" width="90"></el-table-column>
       </el-table>
     </div>
   </div>
